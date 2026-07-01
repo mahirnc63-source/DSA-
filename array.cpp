@@ -78,16 +78,31 @@ void rightrotate2(vector<int>& arr,int n,int k){
     reverse(arr.begin(),arr.begin()+n);
 
 }
+void movezero(vector<int>& a,int n){
+    vector<int> temp;
+    for(int i=0;i<n;i++){
+        if(a[i]!=0){
+            temp.push_back(a[i]);
+        }
+    }
+    int nz=temp.size();
+    for(int i=0;i<nz;i++){
+        a[i]=temp[i];
+    }
+    for(int i=nz;i<n;i++){
+        a[i]=0;
+    }
+}
 int main(){
     /*int arr[6]={2,3,6,8,4,9};;
     int n=sizeof(arr) / sizeof(arr[0]);
     int a=issorted(arr,n);
     cout<<"slargest="<<a;*/
-    vector<int> arr={1,2,3,4,5};
+    vector<int> a={1,0,2,0,0,3,4,5};
     int k=8;
-    int n=arr.size();
-    rightrotate2(arr,n,k);
-    for(int x:arr){
+    int n=a.size();
+    movezero(a,n);
+    for(int x:a){
         cout<<x<<" ";
     }
 
