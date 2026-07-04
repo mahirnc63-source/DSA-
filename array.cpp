@@ -111,16 +111,33 @@ vector<int> movezero2(vector<int>& a,int n){
     }
     return a;
 }
+vector<int> findunion(vector<int> a,vector<int> b){
+    int n1=a.size();
+    int n2=b.size();
+    set<int> st;
+    for(int i=0;i<n1;i++){
+        st.insert(a[i]);
+    }
+    for(int j=0;j<n2;j++){
+        st.insert(b[j]);
+    }
+    vector<int> temp;
+    for(auto x:st){
+        temp.push_back(x);
+    }
+    return temp;
+}
 int main(){
     /*int arr[6]={2,3,6,8,4,9};;
     int n=sizeof(arr) / sizeof(arr[0]);
     int a=issorted(arr,n);
     cout<<"slargest="<<a;*/
     vector<int> a={1,0,2,0,0,3,4,5};
+    vector<int> b={1,2,2,3,4,5,6};
     int k=8;
-    int n=a.size();
-    movezero2(a,n);
-    for(int x:a){
+    //int n=a.size();
+    vector<int> un=findunion(a,b);
+    for(int x:un){
         cout<<x<<" ";
     }
 
