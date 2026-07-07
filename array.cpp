@@ -127,11 +127,25 @@ vector<int> findunion(vector<int> a,vector<int> b){
     }
     return temp;
 }
+int missingnum(vector<int>& a){
+    int n=a.size()+1;
+    for(int i=1;i<=n;i++){
+        bool found=false;
+        for(int j=0;j<n-1;j++){
+            if(a[j]==i){
+                found=true;
+                break;
+            }
+        }
+        if(!found) return i;
+    }
+    return -1;
+}
 int main(){
     /*int arr[6]={2,3,6,8,4,9};;
     int n=sizeof(arr) / sizeof(arr[0]);
     int a=issorted(arr,n);
-    cout<<"slargest="<<a;*/
+    cout<<"slargest="<<a;
     vector<int> a={1,0,2,0,0,3,4,5};
     vector<int> b={1,2,2,3,4,5,6};
     int k=8;
@@ -139,7 +153,9 @@ int main(){
     vector<int> un=findunion(a,b);
     for(int x:un){
         cout<<x<<" ";
-    }
+    }*/
+   vector<int> a={1,2,3,5};
+   cout<<missingnum(a);
 
     return 0;
 }
