@@ -141,6 +141,20 @@ int missingnum(vector<int>& a){
     }
     return -1;
 }
+int maxconsequtive(vector<int>& a){
+    int maxi=0;
+    int cnt=0;
+    for(int i=0;i<a.size();i++){
+        if(a[i]==1){
+            cnt++;
+            maxi=max(cnt,maxi);
+        }
+        else{
+            cnt=0;
+        }
+    }
+    return maxi;
+}
 int main(){
     /*int arr[6]={2,3,6,8,4,9};;
     int n=sizeof(arr) / sizeof(arr[0]);
@@ -154,8 +168,8 @@ int main(){
     for(int x:un){
         cout<<x<<" ";
     }*/
-   vector<int> a={1,2,3,5};
-   cout<<missingnum(a);
+   vector<int> a={1,1,2,2,1,1,1,3,1,1,1,1,1,5};
+   cout<<maxconsequtive(a);
 
     return 0;
 }
