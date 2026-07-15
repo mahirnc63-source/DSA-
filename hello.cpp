@@ -64,5 +64,7 @@ int main() {
 
     cout << "Union of arr1 and arr2 is: ";
     for (int val : result) cout << val << " ";
+    cout<<"hello";
+    
     return 0;
 }
